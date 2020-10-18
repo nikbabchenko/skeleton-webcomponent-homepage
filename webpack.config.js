@@ -14,7 +14,7 @@ module.exports = {
   ],
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
   },
   module: {
     rules: [
@@ -39,7 +39,7 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: './dist',
+    contentBase: './docs',
     open: true
   },
 };
