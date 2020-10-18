@@ -1,0 +1,115 @@
+
+
+
+// Import full Spectre source code
+$primary-color: #1a75d2;
+$dark-color: #262b2f;
+
+@import "node_modules/spectre.css/src/variables";
+@import "node_modules/spectre.css/src/mixins";
+@import "node_modules/spectre.css/src/normalize";
+@import "node_modules/spectre.css/src/base";
+
+// Layout
+@import "node_modules/spectre.css/src/layout";
+@import "node_modules/spectre.css/src/hero";
+@import "node_modules/spectre.css/src/navbar";
+
+// Components
+@import "node_modules/spectre.css/src/avatars";
+@import "node_modules/spectre.css/src/buttons";
+@import "node_modules/spectre.css/src/breadcrumbs";
+@import "node_modules/spectre.css/src/bars";
+@import "node_modules/spectre.css/src/cards";
+@import "node_modules/spectre.css/src/chips";
+@import "node_modules/spectre.css/src/dropdowns";
+@import "node_modules/spectre.css/src/empty";
+@import "node_modules/spectre.css/src/menus";
+@import "node_modules/spectre.css/src/modals";
+@import "node_modules/spectre.css/src/navs";
+
+// Utility classes
+@import "node_modules/spectre.css/src/animations";
+@import "node_modules/spectre.css/src/utilities";
+
+
+@import "node_modules/spectre.css/src/typography";
+
+code {
+  padding-left: 0;
+}
+
+body {
+  font-family: 'Mukta', sans-serif;
+  
+  --surface-color: #f4f5f6;
+}
+
+
+.navigation {
+  position: sticky;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--surface-color);
+  z-index: 999;
+
+  &__inner {
+    align-items: center;
+  }
+
+  &__logo {
+    flex: 1 1 auto;
+  }
+}
+
+.octocat {
+  border: 0;
+  color: #f4f5f6;
+  fill: $primary-color;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+}
+.octocat .octocat-arm, .octocat .octocat-body {
+  fill: #f4f5f6;
+}
+
+
+.docs-section {
+  padding-top: 100px;
+  margin-top: -40px;
+
+  &--intro {
+    padding-top: 140px;
+    background: linear-gradient(to right, #4568dc, #b06ab3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: white;
+    min-height: 500px;
+  }
+}
+
+div.code-toolbar > .toolbar {
+  button {
+    outline: none;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      opacity: .9;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .main-menu {
+    display: none !important;
+  }
+}
