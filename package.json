@@ -12,7 +12,7 @@
   "dependencies": {
     "prism-themes": "^1.4.1",
     "prismjs": "^1.22.0",
-    "skeleton-webcomponent-loader": "0.0.3",
+    "skeleton-webcomponent-loader": "^1.0.0",
     "spectre.css": "^0.5.9"
   },
   "devDependencies": {

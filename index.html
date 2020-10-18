@@ -23,9 +23,10 @@
                     <div class="column">
                         <nav class="navbar-section main-menu">
                             <a class="btn btn-link text-light" href="#install">Install</a>
-                            <a class="btn btn-link text-light" href="#appearance">Appearance</a>
+                            <a class="btn btn-link text-light" href="#variants">Variants</a>
                             <a class="btn btn-link text-light" href="#animations">Animations</a>
                             <a class="btn btn-link text-light" href="#customization">Customization</a>
+                            <a class="btn btn-link text-light" href="#frameworks">Framework Usage Examples</a>
                         </nav>
                     </div>
                     <a href="https://github.com/nikbabchenko/skeleton-webcomponent" rel="noopener" target="_blank"
@@ -62,7 +63,7 @@
                         <div class="skeleton-example">
                             <div class="card intro-card is-loading">
                                 <div class="card-header">
-                                    <nb-skeleton appearance="circle"
+                                    <nb-skeleton variant="circle"
                                         custom-styles='{"height": "64px", "width": "64px", "margin": "0px", "display": "block"}'>
                                     </nb-skeleton>
                                     <figure class="avatar avatar-xl">
@@ -72,10 +73,10 @@
                                 </div>
                                 <div class="card-image">
                                     <nb-skeleton
-                                        custom-styles='{"width": "350px", "height": "240px", "border-radius": "0px", "margin": "0px"}'>
+                                        custom-styles='{"width": "348px", "height": "240px", "border-radius": "0px", "margin": "0px"}'>
                                     </nb-skeleton>
                                     <img class="img-responsive card-image-item"
-                                        src="https://loremflickr.com/g/350/240/developer" alt="">
+                                        src="https://loremflickr.com/g/348/240/developer" alt="">
                                 </div>
                                 <div class="card-body">To make a contribution to the world by making tools for the mind
                                     that advance humankind.</div>
@@ -136,7 +137,6 @@
                                         simpliest way)</span>
                                     <pre><code class="language-js">import {defineCustomElements as initSkeleton} from  './node_modules/skeleton-webcomponent-loader/loader/index.js';
 initSkeleton();</code></pre>
-
                                 </li>
                                 <li>
                                     <span class="h5">Script tag via UNPKG (global npm delivery network) (could be used anywhere - any
@@ -172,12 +172,12 @@ initSkeleton();</code></pre>
                 </div>
             </div>
         </section>
-        <section class="hero docs-section" id="appearance">
+        <section class="hero docs-section" id="variants">
             <div class="container grid-xl">
                 <div class="columns">
                     <div class="column">
                         <div class="hero-body">
-                            <h2>Appearance</h2>
+                            <h2>Variants</h2>
                             <p>Property <b>appearance</b> supports 2 kinds of shapes: <i>default</i> and <i>circle</i>.
                             </p>
                             <!-- CodePen embed -->
@@ -268,6 +268,41 @@ initSkeleton();</code></pre>
                 </div>
             </div>
         </section>
+
+        <section class="hero docs-section" id="frameworks">
+            <div class="container grid-xl">
+                <div class="columns">
+                    <div class="column">
+                        <div class="hero-body">
+                            <h2>Framework usage examples</h2>
+                            <ul>
+                                <li>
+                                    <span class="h5">Angular</span>
+                                    <iframe 
+                                        loading="lazy"
+                                        src="https://codesandbox.io/embed/skeleton-webcomponent-loader-angular-e1uog?fontsize=14&hidenavigation=1&theme=dark" 
+                                        style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+                                        title="Skeleton-Webcomponent-Loader-Angular"
+                                        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                                        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+                                    >
+                                    </iframe>
+                                </li>
+                                <li>
+                                    <span class="h5">React</span>
+                                    <iframe loading="lazy"  src="https://codesandbox.io/embed/hungry-blackburn-r3hgb?fontsize=14&hidenavigation=1&theme=dark"
+                                    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+                                    title="hungry-blackburn-r3hgb"
+                                    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                                    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+                                  ></iframe>
+                                </li>                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
     </main>
 
 
