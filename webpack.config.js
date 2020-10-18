@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -14,9 +15,14 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-      chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
-    })
+      filename: isDevelopment ? '[name].css' : '[name].[fullhash].css',
+      chunkFilename: isDevelopment ? '[id].css' : '[id].[fullhash].css'
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'assets', to: '.' },
+      ],
+    }),
   ],
   output: {
     filename: 'main.js',
