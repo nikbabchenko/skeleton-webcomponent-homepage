@@ -1,0 +1,29 @@
+@import "node_modules/spectre.css/src/variables";
+@import "node_modules/spectre.css/src/mixins";
+@import "node_modules/spectre.css/src/normalize";
+@import "node_modules/spectre.css/src/base";
+
+// Layout
+@import "node_modules/spectre.css/src/layout";
+@import "node_modules/spectre.css/src/hero";
+@import "node_modules/spectre.css/src/navbar";
+
+// Components
+@import "node_modules/spectre.css/src/avatars";
+@import "node_modules/spectre.css/src/buttons";
+@import "node_modules/spectre.css/src/breadcrumbs";
+@import "node_modules/spectre.css/src/bars";
+@import "node_modules/spectre.css/src/cards";
+@import "node_modules/spectre.css/src/chips";
+@import "node_modules/spectre.css/src/dropdowns";
+@import "node_modules/spectre.css/src/empty";
+@import "node_modules/spectre.css/src/menus";
+@import "node_modules/spectre.css/src/modals";
+@import "node_modules/spectre.css/src/navs";
+
+// Utility classes
+@import "node_modules/spectre.css/src/animations";
+@import "node_modules/spectre.css/src/utilities";
+
+
+@import "node_modules/spectre.css/src/typography";

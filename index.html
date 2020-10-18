@@ -5,32 +5,31 @@
     <meta charset="utf-8">
     <title>Skeleton Loader Demo</title>
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
 <body>
     <main>
-        <header class="navigation navbar">
+        <header class="navigation navbar bg-primary">
             <div class="container grid-xl">
                 <div class="columns navigation__inner">
                     <div class="column navigation__logo">
                         <section class="navbar-section">
-                            <a href="/" class="navbar-brand logo">Skeleton Loader</a>
+                            <a href="/" class="navbar-brand logo text-light">Skeleton Loader</a>
                         </section>
                     </div>
 
                     <div class="column">
                         <nav class="navbar-section main-menu">
-                            <a class="btn btn-link" href="#install">Install</a>
-                            <a class="btn btn-link" href="#appearance">Appearance</a>
-                            <a class="btn btn-link" href="#animations">Animations</a>
-                            <a class="btn btn-link" href="#customization">Customization</a>
+                            <a class="btn btn-link text-light" href="#install">Install</a>
+                            <a class="btn btn-link text-light" href="#appearance">Appearance</a>
+                            <a class="btn btn-link text-light" href="#animations">Animations</a>
+                            <a class="btn btn-link text-light" href="#customization">Customization</a>
                         </nav>
                     </div>
-                    <a href="https://github.com/milligram/milligram" rel="noopener" target="_blank"
-                        title="Milligram on Github"><svg class="octocat" viewBox="0 0 250 250">
+                    <a href="https://github.com/nikbabchenko/skeleton-webcomponent" rel="noopener" target="_blank"
+                        title="Milligram on Github"><svg width="52" height="52" class="octocat" viewBox="0 0 250 250">
                             <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
                             <path class="octocat-arm"
                                 d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2">
@@ -45,17 +44,75 @@
         <section class="hero docs-section docs-section--intro">
             <div class="container grid-xl">
                 <div class="columns">
-                    <div class="column">
+                    <div class="column col-xl-12 col-6">
                         <div class="hero-body">
                             <h2>Skeleton</h2>
-                            <p>Display a placeholder preview of your content before the data gets loaded to reduce
+                            <span class="h5">Display a placeholder preview of your content before the data gets loaded
+                                to reduce
                                 load-time
                                 frustration.
-                            </p>
+                            </span> 
+
+                            <script type="text/plain" class="language-html"><nb-skeleton variant="circle"></nb-skeleton>
+<nb-skeleton variant="rect"></nb-skeleton>                                
+<nb-skeleton count="2"></nb-skeleton></script>
                         </div>
                     </div>
-                    <div class="column">
+                    <div class="column col-xl-12 col-6 skeleton-example-col">
+                        <div class="skeleton-example">
+                            <div class="card intro-card is-loading">
+                                <div class="card-header">
+                                    <nb-skeleton appearance="circle"
+                                        custom-styles='{"height": "64px", "width": "64px", "margin": "0px", "display": "block"}'>
+                                    </nb-skeleton>
+                                    <figure class="avatar avatar-xl">
+                                        <img
+                                            src='https://avataaars.io/?avatarStyle=Transparent&topType=WinterHat4&accessoriesType=Prescription01&hatColor=Red&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Light' />
+                                    </figure>
+                                </div>
+                                <div class="card-image">
+                                    <nb-skeleton
+                                        custom-styles='{"width": "350px", "height": "240px", "border-radius": "0px", "margin": "0px"}'>
+                                    </nb-skeleton>
+                                    <img class="img-responsive card-image-item"
+                                        src="https://loremflickr.com/g/350/240/developer" alt="">
+                                </div>
+                                <div class="card-body">To make a contribution to the world by making tools for the mind
+                                    that advance humankind.</div>
+                                <nb-skeleton style="margin-top: 15px;" count="2"
+                                    custom-styles='{"margin-left": "15px", "width": "300px"}'></nb-skeleton>
+                            </div>
+                        </div>
+                        <div class="skeleton-action">
+                            <a class="action-button btn btn-primary">Toggle Loading State</a>
+                        </div>
 
+                        <script>
+                            const initPreviewCardActions = () => {
+                                const cardWrapper = document.querySelector('.skeleton-example-col');
+                                const card = document.querySelector('.intro-card');
+                                const image = card.querySelector('.card-image-item');
+                                const actionButton = cardWrapper.querySelector('.action-button');
+
+                                image.addEventListener('load', () => {
+                                    setTimeout(() => {
+                                        card.classList.remove('is-loading');
+                                    }, 3000);
+                                });
+
+                                actionButton.addEventListener('click', () => {
+                                    const card = document.querySelector('.intro-card');
+                                    if (card.classList.contains('is-loading')) {
+                                        card.classList.remove('is-loading');
+                                        return;
+                                    }
+
+                                    card.classList.add('is-loading');
+                                });
+                            }
+
+                            initPreviewCardActions();                            
+                        </script>
                     </div>
                 </div>
             </div>
@@ -71,21 +128,29 @@
                                 via UNPKG</p>
 
                             <pre><code class="language-bash">npm i skeleton-webcomponent-loader</code></pre>
-
-                            <h5>ESM import (Webpack/Browsers which support ES modules/Angular/React) (seems like the
-                                simpliest way)</h5>
-                            <pre><code class="language-js">import {defineCustomElements as initSkeleton} from  './node_modules/skeleton-webcomponent-loader/loader/index.js';
+                            
+                            <h3 class="choose">You can choose one of the following options to add skeleton loader's script to the page:</h3>
+                            <ul>
+                                <li>
+                                    <span class="h5">ESM import (Webpack/Browsers which support ES modules/Angular/React) (seems like the
+                                        simpliest way)</span>
+                                    <pre><code class="language-js">import {defineCustomElements as initSkeleton} from  './node_modules/skeleton-webcomponent-loader/loader/index.js';
 initSkeleton();</code></pre>
 
-                            <h5>Script tag via UNPKG (global npm delivery network) (could be used anywhere - any
-                                framework, without framework)</h5>
-
-                            <pre><code class="language-html">&lt;script  type=&quot;module&quot;  src=&quot;https://unpkg.com/skeleton-webcomponent-loader@0.0.3/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js&quot;&gt;&lt;/script&gt;
+                                </li>
+                                <li>
+                                    <span class="h5">Script tag via UNPKG (global npm delivery network) (could be used anywhere - any
+                                        framework, without framework)</span>
+        
+                                    <pre><code class="language-html">&lt;script  type=&quot;module&quot;  src=&quot;https://unpkg.com/skeleton-webcomponent-loader@0.0.3/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js&quot;&gt;&lt;/script&gt;
 &lt;script  type=&quot;nomodule&quot;  src=&quot;https://unpkg.com/skeleton-webcomponent-loader@0.0.3/dist/skeleton-webcomponent/skeleton-webcomponent.js&quot;&gt;&lt;/script&gt;</code></pre>
-                            <h5>Script tag via npm (could be used anywhere - any framework, without framework)</h5>
-                            <pre><code class="language-html">&lt;script type=&quot;module&quot;  src=&quot;./node_modules/skeleton-webcomponent-loader/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js&quot;&gt;&lt;/script&gt;
+                                </li>
+                                <li>
+                                    <span class="h5">Script tag via npm (could be used anywhere - any framework, without framework)</span>
+                                    <pre><code class="language-html">&lt;script type=&quot;module&quot;  src=&quot;./node_modules/skeleton-webcomponent-loader/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js&quot;&gt;&lt;/script&gt;
 &lt;script  type=&quot;nomodule&quot;  src=&quot;./node_modules/skeleton-webcomponent-loader/dist/skeleton-webcomponent/skeleton-webcomponent.js&quot;&gt;&lt;/script&gt;</code></pre>
-                            <h5>Angular</h5>
+                                </li>
+                                <li><span class="h5">Angular</span>
                             In app.module.ts or any module which uses skeleton in order to provide ability to use
                             webcomponents:
                             <pre><code class="language-js">@NgModule({
@@ -100,6 +165,8 @@ export class AppModule {}</code></pre>
 
                             <pre><code class="language-js">import {defineCustomElements as initSkeleton} from  './node_modules/skeleton-webcomponent-loader/loader/index.js';
 initSkeleton();</code></pre>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -114,7 +181,7 @@ initSkeleton();</code></pre>
                             <p>Property <b>appearance</b> supports 2 kinds of shapes: <i>default</i> and <i>circle</i>.
                             </p>
                             <!-- CodePen embed -->
-                            <p class="codepen" data-height="400" data-theme-id="29863" data-default-tab="html,result"
+                            <p data-height="400" data-theme-id="29863" data-default-tab="html,result"
                                 data-user="mikehummer" data-slug-hash="YzWqbWe"
                                 style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
                                 data-pen-title="skeleton loader  webcomponent variants">
@@ -139,7 +206,7 @@ initSkeleton();</code></pre>
                             <p>Property <b>animation</b> supports: <b>progress, pulse and progress-dark</b> animations.
                                 Animation could be <b>disabled</b> if needed.</p>
                             <!-- CodePen embed -->
-                            <p class="codepen" data-height="400" data-theme-id="29863" data-default-tab="html,result"
+                            <p data-height="400" data-theme-id="29863" data-default-tab="html,result"
                                 data-user="mikehummer" data-slug-hash="ExyyjJb"
                                 style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
                                 data-pen-title="Skeleton Webcomponents Animations">
@@ -185,7 +252,7 @@ initSkeleton();</code></pre>
                                 </ul>
                             </div>
                             <!-- CodePen embed -->
-                            <p class="codepen" data-height="400" data-theme-id="29863" data-default-tab="html,result"
+                            <p data-height="400" data-theme-id="29863" data-default-tab="html,result"
                                 data-user="mikehummer" data-slug-hash="OJXXyyJ"
                                 style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
                                 data-pen-title="Skeleton Webcomponent Customization">
