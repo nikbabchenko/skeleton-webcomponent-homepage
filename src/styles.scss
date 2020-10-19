@@ -71,10 +71,32 @@ body {
     min-height: 500px;
   }
 
+  &--frameworks {
+    overflow: hidden;
+  }
+
   &.hero {
     padding-bottom: 20px;
   }
 
+}
+
+.docs-title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.brands {
+  display: inline-grid;
+  column-gap: 10px;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+
+  &--docs {
+    img {
+      width: 40px;
+    }
+  }
 }
 
 div.code-toolbar > .toolbar {
