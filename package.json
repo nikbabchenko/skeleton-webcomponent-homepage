@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@deckdeckgo/highlight-code": "^2.1.0",
     "prism-themes": "^1.4.1",
     "prismjs": "^1.22.0",
     "skeleton-webcomponent-loader": "^1.0.5",

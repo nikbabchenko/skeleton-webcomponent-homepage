@@ -1,13 +1,8 @@
 import "./styles.scss";
-import "prism-themes/themes/prism-xonokai.css";
-import "prismjs";
-import "prismjs/plugins/unescaped-markup/prism-unescaped-markup.min.js";
-import "prismjs/plugins/toolbar/prism-toolbar.css";
-import "prismjs/plugins/toolbar/prism-toolbar.min.js";
-import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js";
-
 import { defineCustomElements as initSkeleton } from "skeleton-webcomponent-loader/loader/index.js";
+import { defineCustomElements as deckDeckGoElement } from '@deckdeckgo/highlight-code/dist/loader';
 
+deckDeckGoElement();
 initSkeleton();
 
 const getInitCodePenScript = () => {
@@ -30,5 +25,5 @@ const initCodePen = getInitCodePenScript();
 window.addEventListener("load", () => {
   setTimeout(() => {
     requestAnimationFrame(() => initCodePen());
-  }, 500);
+  }, 300);
 });
